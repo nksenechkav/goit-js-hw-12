@@ -4,6 +4,7 @@ import { onError } from './onError';
 import { fetchImg } from './fetchImage';
 import { loaderOn } from './loader';
 import { loaderOff } from './loader';
+import axios from 'axios';
 
 // let page = 1;
 
