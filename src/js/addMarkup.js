@@ -1,17 +1,18 @@
 export function addMarkup(image) {
+  const { largeImageURL, webformatURL, tags, likes, views, comments, downloads } = image;
     return `<li class="gallery-item">
-          <a href="${image.largeImageURL}" class="gallery-link">
+          <a href="${largeImageURL}" class="gallery-link">
             <img
-              src="${image.webformatURL}"
+              src="${webformatURL}"
               class="gallery-image"
-              alt="${image.tags}"
+              alt="${tags}"
             />
           </a>
           <div class="modal-text"> 
-              <div class="modal-element"><p>Likes</p><span>${image.likes}</span></div>
-              <div class="modal-element"><p>Views</p><span>${image.views}</span></div>
-              <div class="modal-element"><p>Comments</p><span>${image.comments}</span></div>
-              <div class="modal-element"><p>Downloads</p><span>${image.downloads}</span></div>
+              <div class="modal-element"><p>Likes</p><span>${likes}</span></div>
+              <div class="modal-element"><p>Views</p><span>${views}</span></div>
+              <div class="modal-element"><p>Comments</p><span>${comments}</span></div>
+              <div class="modal-element"><p>Downloads</p><span>${downloads}</span></div>
           </div>
         </li>`;
   }
