@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetchImg(input) {
+export async function fetchImg(input, currentPage) {
   const API_KEY = '42271393-ceafa19bde7d0a63fb15d5d6f';
   const BASE_URL = 'https://pixabay.com';
   const END_POINT = '/api/';
@@ -13,6 +13,7 @@ export async function fetchImg(input) {
     orientation:'horizontal',
     safesearch: 'true',
     per_page: 15,
+    page: currentPage,
   };
 
   const res = await axios.get(url, { params });

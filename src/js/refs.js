@@ -5,4 +5,5 @@ export const refs = {
     galleryList: document.querySelector('.gallery'),
     container: document.querySelector('.container'),
     loader: document.querySelector('.loader'),
+    btnLoadMore: document.querySelector('.js-btn-load'),
   };
