@@ -1,6 +1,7 @@
 import { refs } from './js/refs';
-import { onFormSubmit } from './js/onFormSubmit';
-import { onLoadMoreClick } from './js/onFormSubmit';
+import { onFormSubmit } from './js/pixabay-api';
+import { onLoadClick } from './js/pixabay-api';
 
 refs.form.addEventListener('submit', onFormSubmit);
-refs.btnLoadMore.addEventListener('click', onLoadMoreClick);
+
+refs.btnLoadMore.addEventListener('click', onLoadClick);

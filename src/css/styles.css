@@ -172,3 +172,26 @@ span {
 .hidden {
   display: none;
 }
+
+.js-btn-load {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  width: 91px;
+  height: 40px;
+  cursor: pointer;
+}
+.js-btn-load:hover {
+  background: #6c8cff;
+}
+
+.btn-load {
+  padding-top: 30px;
+}

@@ -1,11 +1,15 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const MESSAGE =
+export const MESSAGE =
   'Sorry, there are no images matching your search query. Please try again!';
-export function onError() {
+export const LIMIT =
+  "We're sorry, but you've reached the end of search results.";
+export const CORRECT = 'Please enter correct information.';
+
+export function onError(message) {
   iziToast.error({
-    message: MESSAGE,
+    message: message,
     position: 'topRight',
   });
 }
