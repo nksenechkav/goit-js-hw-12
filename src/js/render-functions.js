@@ -13,7 +13,7 @@ export let lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-export function makeGalleryItem(response) {
+export function createGalleryItem(response) {
   const result = response.hits.map(addMarkup).join('');
   totalHits = response.totalHits;
   if (totalHits > perPage) {
