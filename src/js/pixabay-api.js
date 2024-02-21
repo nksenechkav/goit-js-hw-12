@@ -24,22 +24,28 @@ export async function onFormSubmit(event) {
   userSearch = event.target.elements.input.value.trim();
 
   if (userSearch) {
+
     try {
-      const response = await fetchImg(userSearch);
+      loaderOn();
+      const response = await fetchImg(userSearch, page);
       createGalleryItem(response);
-    } catch (error) {
+    } 
+    
+    catch (error) {
       onError(MESSAGE);
     } 
       loaderOff();
       refs.form.reset();
-  } else {
+  } 
+  
+  else {
     refs.form.elements.input.value = '';
     onError(CORRECT);
   }
 }
 
-export async function fetchImg(input) {
-  loaderOn();
+export async function fetchImg(input, page) {
+
   const API_KEY = '42271393-ceafa19bde7d0a63fb15d5d6f';
   axios.defaults.baseURL = 'https://pixabay.com/api/';
   const parameters = `q=${input}&image_type=photo&orientation=horizontal&safesearch=true`;
@@ -58,18 +64,20 @@ export async function fetchImg(input) {
 
 export async function onLoadClick() {
   page += 1;
+  loaderOn();
+
   const totalPages = Math.ceil(totalHits / perPage);
 
-  if (page >= totalPages) {
-    refs.btnLoadMore.classList.add('hidden');
-    onError(LIMIT);
-  } else {
-    const result = await fetchImg(userSearch);
+  const result = await fetchImg(userSearch, page);
     createGalleryItem(result);
     scrollPage();
     loaderOff();
     lightbox.refresh();
-  }
+
+  if (page >= totalPages) {
+    refs.btnLoadMore.classList.add('hidden');
+    onError(LIMIT);
+  } 
 }
 
 function scrollPage() {

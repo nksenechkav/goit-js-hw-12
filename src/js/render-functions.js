@@ -16,17 +16,22 @@ export let lightbox = new SimpleLightbox('.gallery a', {
 export function createGalleryItem(response) {
   const result = response.hits.map(addMarkup).join('');
   totalHits = response.totalHits;
+
   if (totalHits > perPage) {
     refs.btnLoadMore.classList.remove('hidden');
   }
+
   if (response.hits.length) {
     refs.galleryList.insertAdjacentHTML('beforeend', result);
-  } else {
+  } 
+
+  else {
     onError(MESSAGE);
   }
 
   lightbox.refresh();
 }
+
 
 export function addMarkup(image) {
   const { largeImageURL, webformatURL, tags, likes, views, comments, downloads } = image;
